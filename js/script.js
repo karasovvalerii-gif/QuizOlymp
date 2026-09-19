@@ -7,7 +7,6 @@ let userData = { name: "", class: "" };
 let startTime = 0;
 let timerInterval = null;
 let totalTimeSeconds = 0;
-let maxQuestionCount = 3;
 
 // DOM елементи
 const startScreen = document.getElementById("start-screen");
@@ -49,7 +48,6 @@ function startTimer() {
 
 // Завантаження питання
 function loadQuestion() {
-    
     const q = questions[currentQuestionIndex];
     questionText.textContent = q.question;
     questionTracker.textContent = `Питання ${currentQuestionIndex + 1} з ${questions.length}`;
