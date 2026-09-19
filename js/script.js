@@ -52,7 +52,7 @@ function loadQuestion() {
     
     const q = questions[currentQuestionIndex];
     questionText.textContent = q.question;
-    questionTracker.textContent = `Питання ${currentQuestionIndex + 1} з ${maxQuestionCount}`;
+    questionTracker.textContent = `Питання ${currentQuestionIndex + 1} з ${questions.length}`;
     
     optionsContainer.innerHTML = "";
     q.options.forEach((option, index) => {
@@ -71,7 +71,7 @@ function selectOption(selectedIndex) {
     }
 
     currentQuestionIndex++;
-    if (currentQuestionIndex < maxQuestionCount) {
+    if (currentQuestionIndex < questions.length) {
         loadQuestion();
     } else {
         finishQuiz();
